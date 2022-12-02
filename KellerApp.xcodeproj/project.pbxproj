@@ -23,6 +23,8 @@
 		D80D59282938F9BC00BE9B25 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D80D59272938F9BC00BE9B25 /* FirebaseStorage */; };
 		D80D592B29392B1700BE9B25 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */; };
 		D80D592E29392F1600BE9B25 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */; };
+		D80D5932293A6EAA00BE9B25 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5931293A6EAA00BE9B25 /* CreateAccountViewController.swift */; };
+		D80D5936293A6EE700BE9B25 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5935293A6EE700BE9B25 /* CreateAccountScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D80D591E2938F8E400BE9B25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D80D5931293A6EAA00BE9B25 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		D80D5935293A6EE700BE9B25 /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		D80D58E92938E3A700BE9B25 /* KellerApp */ = {
 			isa = PBXGroup;
 			children = (
+				D80D5930293A6E7500BE9B25 /* CreateAccount */,
 				D80D592929392AEE00BE9B25 /* ForgotPassword */,
 				D80D591A2938E71F00BE9B25 /* Login */,
 				D80D58EE2938E3A700BE9B25 /* LoginViewController.swift */,
@@ -145,7 +150,7 @@
 		D80D591A2938E71F00BE9B25 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D80D591B2938E74D00BE9B25 /* LoginScreen.swift */,
+				D80D5933293A6EC300BE9B25 /* Screen */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -172,6 +177,31 @@
 			isa = PBXGroup;
 			children = (
 				D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D80D5930293A6E7500BE9B25 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5934293A6ED200BE9B25 /* Screen */,
+				D80D5931293A6EAA00BE9B25 /* CreateAccountViewController.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		D80D5933293A6EC300BE9B25 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D80D591B2938E74D00BE9B25 /* LoginScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D80D5934293A6ED200BE9B25 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5935293A6EE700BE9B25 /* CreateAccountScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -316,10 +346,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80D5932293A6EAA00BE9B25 /* CreateAccountViewController.swift in Sources */,
 				D80D592E29392F1600BE9B25 /* ForgotPasswordViewController.swift in Sources */,
 				D80D58EF2938E3A700BE9B25 /* LoginViewController.swift in Sources */,
 				D80D591C2938E74D00BE9B25 /* LoginScreen.swift in Sources */,
 				D80D58EB2938E3A700BE9B25 /* AppDelegate.swift in Sources */,
+				D80D5936293A6EE700BE9B25 /* CreateAccountScreen.swift in Sources */,
 				D80D58ED2938E3A700BE9B25 /* SceneDelegate.swift in Sources */,
 				D80D592B29392B1700BE9B25 /* ForgotPasswordScreen.swift in Sources */,
 			);

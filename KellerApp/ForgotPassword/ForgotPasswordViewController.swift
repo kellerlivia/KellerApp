@@ -9,7 +9,7 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
     
-    static let indetifier: String = "CreateAccountViewController"
+    static let indetifier: String = "ForgotPasswordViewController"
     let screen: ForgotPasswordScreen = ForgotPasswordScreen()
     
     required init?(coder: NSCoder) {
