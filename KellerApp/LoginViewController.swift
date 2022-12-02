@@ -10,11 +10,12 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var screen: LoginScreen?
+    var lock: ForgotPasswordScreen?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.screen = LoginScreen()
-        self.view = self.screen
+        self.lock = ForgotPasswordScreen()
+        self.view = self.lock
     }
 }
 

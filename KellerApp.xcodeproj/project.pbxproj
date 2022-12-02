@@ -21,6 +21,8 @@
 		D80D59242938F9BC00BE9B25 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = D80D59232938F9BC00BE9B25 /* FirebaseDatabase */; };
 		D80D59262938F9BC00BE9B25 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D80D59252938F9BC00BE9B25 /* FirebaseFirestore */; };
 		D80D59282938F9BC00BE9B25 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D80D59272938F9BC00BE9B25 /* FirebaseStorage */; };
+		D80D592B29392B1700BE9B25 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */; };
+		D80D592E29392F1600BE9B25 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		D80D590D2938E3A800BE9B25 /* KellerAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KellerAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D80D591B2938E74D00BE9B25 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		D80D591E2938F8E400BE9B25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
+		D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 		D80D58E92938E3A700BE9B25 /* KellerApp */ = {
 			isa = PBXGroup;
 			children = (
+				D80D592929392AEE00BE9B25 /* ForgotPassword */,
 				D80D591A2938E71F00BE9B25 /* Login */,
 				D80D58EE2938E3A700BE9B25 /* LoginViewController.swift */,
 				D80D591D2938EAAC00BE9B25 /* AppDelegate */,
@@ -152,6 +157,23 @@
 				D80D58EC2938E3A700BE9B25 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D80D592929392AEE00BE9B25 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D80D592C29392EF100BE9B25 /* Screen */,
+				D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		D80D592C29392EF100BE9B25 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D80D592A29392B1700BE9B25 /* ForgotPasswordScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,10 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80D592E29392F1600BE9B25 /* ForgotPasswordViewController.swift in Sources */,
 				D80D58EF2938E3A700BE9B25 /* LoginViewController.swift in Sources */,
 				D80D591C2938E74D00BE9B25 /* LoginScreen.swift in Sources */,
 				D80D58EB2938E3A700BE9B25 /* AppDelegate.swift in Sources */,
 				D80D58ED2938E3A700BE9B25 /* SceneDelegate.swift in Sources */,
+				D80D592B29392B1700BE9B25 /* ForgotPasswordScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
