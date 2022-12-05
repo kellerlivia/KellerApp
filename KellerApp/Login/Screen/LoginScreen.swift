@@ -8,7 +8,18 @@
 import UIKit
 import Firebase
 
+protocol LoginScreenDelegate: AnyObject {
+    func tappedSignUp()
+    func tappedForgotPassword()
+}
+
 class LoginScreen: UIView {
+    
+    private weak var delegate: LoginScreenDelegate?
+    
+    public func delegate(_ delegate: LoginScreenDelegate?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -124,40 +135,40 @@ class LoginScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.subImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
+            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 170),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 170),
+            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
-            self.passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
+            passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.loginButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 15),
-            self.loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.loginButton.heightAnchor.constraint(equalToConstant: 40),
+            loginButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 15),
+            loginButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            loginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            loginButton.heightAnchor.constraint(equalToConstant: 40),
             
-            self.forgotPasswordButton.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: 12),
-            self.forgotPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.forgotPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30),
+            forgotPasswordButton.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: 12),
+            forgotPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            forgotPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            forgotPasswordButton.heightAnchor.constraint(equalToConstant: 30),
             
-            self.dontHaveAnAccountLabel.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 200),
-            self.dontHaveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 68),
-            self.dontHaveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -155),
+            dontHaveAnAccountLabel.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 200),
+            dontHaveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 68),
+            dontHaveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -155),
             
-            self.signUpButton.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 193),
-            self.signUpButton.leadingAnchor.constraint(equalTo: self.dontHaveAnAccountLabel.trailingAnchor, constant: 5)
+            signUpButton.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 193),
+            signUpButton.leadingAnchor.constraint(equalTo: self.dontHaveAnAccountLabel.trailingAnchor, constant: 5)
             
         ])
     }
@@ -168,9 +179,9 @@ class LoginScreen: UIView {
 
     @objc func buttonLoginAction(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        Auth.auth().signIn(withEmail: email, password: password) { authDataResult, error in
+        Auth.auth().signIn(withEmail: email, password: password) { success, error in
             if error == nil {
-                // indo para a tela de cadastro
+                print("Logado")
             } else {
                 print(error?.localizedDescription ?? "")
             }
@@ -178,10 +189,10 @@ class LoginScreen: UIView {
     }
     
     @objc func buttonForgotPasswordAction(_ sender: UIButton) {
-        
+        delegate?.tappedForgotPassword()
     }
     
     @objc func buttonSignUpAction(_ sender: UIButton) {
-        
+        delegate?.tappedSignUp()
     }
 }

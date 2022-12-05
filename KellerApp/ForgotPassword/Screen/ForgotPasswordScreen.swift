@@ -8,7 +8,18 @@
 import UIKit
 import Firebase
 
+protocol ForgotPasswordScreenDelegate: AnyObject {
+    func tappedSignUp()
+    func tappedForgotPassword()
+}
+
 class ForgotPasswordScreen: UIView {
+    
+    private weak var delegate: ForgotPasswordScreenDelegate?
+    
+    public func delegate(_ delegate: ForgotPasswordScreenDelegate?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -113,39 +124,39 @@ class ForgotPasswordScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.subImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
+            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.lockImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 70),
-            self.lockImageView.heightAnchor.constraint(equalToConstant: 108),
-            self.lockImageView.widthAnchor.constraint(equalToConstant: 108),
-            self.lockImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            lockImageView.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 70),
+            lockImageView.heightAnchor.constraint(equalToConstant: 108),
+            lockImageView.widthAnchor.constraint(equalToConstant: 108),
+            lockImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.descriptionLabel.topAnchor.constraint(equalTo: self.lockImageView.bottomAnchor, constant: 15),
-            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            descriptionLabel.topAnchor.constraint(equalTo: self.lockImageView.bottomAnchor, constant: 15),
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             
-            self.emailTextField.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: 30),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: 30),
+            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.forgotPasswordButton.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
-            self.forgotPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.forgotPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 40),
+            forgotPasswordButton.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 15),
+            forgotPasswordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            forgotPasswordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            forgotPasswordButton.heightAnchor.constraint(equalToConstant: 40),
             
-            self.dontHaveAnAccountLabel.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 200),
-            self.dontHaveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 68),
-            self.dontHaveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -155),
+            dontHaveAnAccountLabel.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 200),
+            dontHaveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 68),
+            dontHaveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -155),
             
-            self.signUpButton.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 193),
-            self.signUpButton.leadingAnchor.constraint(equalTo: self.dontHaveAnAccountLabel.trailingAnchor, constant: 5)
+            signUpButton.topAnchor.constraint(equalTo: self.forgotPasswordButton.bottomAnchor, constant: 193),
+            signUpButton.leadingAnchor.constraint(equalTo: self.dontHaveAnAccountLabel.trailingAnchor, constant: 5)
             
         ])
     }
@@ -155,10 +166,10 @@ class ForgotPasswordScreen: UIView {
     }
     
     @objc func buttonForgotPasswordAction(_ sender: UIButton) {
-        
+        delegate?.tappedForgotPassword()
     }
     
     @objc func buttonSignUpAction(_ sender: UIButton) {
-        
+        delegate?.tappedSignUp()
     }
 }

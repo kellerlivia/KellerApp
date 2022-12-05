@@ -10,12 +10,36 @@ import UIKit
 class LoginViewController: UIViewController {
     
     var screen: LoginScreen?
-    var create: CreateAccountScreen?
-
+    
+    override func loadView() {
+        super.loadView()
+        screen = LoginScreen()
+        view = screen
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.create = CreateAccountScreen()
-        self.view = self.create
+        screen?.delegate(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
+//MARK: - Delegate
+
+extension LoginViewController: LoginScreenDelegate {
+    
+    func tappedSignUp() {
+        let vc = CreateAccountViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tappedForgotPassword() {
+        let vc = ForgotPasswordViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+}

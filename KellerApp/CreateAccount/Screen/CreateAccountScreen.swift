@@ -8,7 +8,17 @@
 import UIKit
 import Firebase
 
+protocol CreateAccountScreenDelegate: AnyObject {
+    func tappedLogin()
+}
+
 class CreateAccountScreen: UIView {
+    
+    private weak var delegate: CreateAccountScreenDelegate?
+    
+    public func delegate(_ delegate: CreateAccountScreenDelegate?) {
+        self.delegate = delegate
+    }
 
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -164,49 +174,49 @@ class CreateAccountScreen: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.subImageView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            subImageView.topAnchor.constraint(equalTo: self.topAnchor),
+            subImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
+            titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            self.descriptionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 35),
-            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            descriptionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 35),
+            descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            descriptionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
             
-            self.emailTextField.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: 30),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor, constant: 30),
+            emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.nameTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 10),
-            self.nameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.nameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.nameTextField.heightAnchor.constraint(equalToConstant: 50),
+            nameTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 10),
+            nameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            nameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            nameTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.passwordTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 10),
-            self.passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.passwordTextField.heightAnchor.constraint(equalToConstant: 50),
+            passwordTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 10),
+            passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.repeatPasswordTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 10),
-            self.repeatPasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.repeatPasswordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.repeatPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
+            repeatPasswordTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 10),
+            repeatPasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            repeatPasswordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            repeatPasswordTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            self.signUpButton.topAnchor.constraint(equalTo: self.repeatPasswordTextField.bottomAnchor, constant: 15),
-            self.signUpButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            self.signUpButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
-            self.signUpButton.heightAnchor.constraint(equalToConstant: 40),
+            signUpButton.topAnchor.constraint(equalTo: self.repeatPasswordTextField.bottomAnchor, constant: 15),
+            signUpButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            signUpButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            signUpButton.heightAnchor.constraint(equalToConstant: 40),
             
-            self.haveAnAccountLabel.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 190),
-            self.haveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
-            self.haveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -170),
+            haveAnAccountLabel.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 190),
+            haveAnAccountLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
+            haveAnAccountLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -170),
             
-            self.logInButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 183),
-            self.logInButton.leadingAnchor.constraint(equalTo: self.haveAnAccountLabel.trailingAnchor, constant: 5)
+            logInButton.topAnchor.constraint(equalTo: self.signUpButton.bottomAnchor, constant: 183),
+            logInButton.leadingAnchor.constraint(equalTo: self.haveAnAccountLabel.trailingAnchor, constant: 5)
             
         ])
     }
@@ -231,6 +241,6 @@ class CreateAccountScreen: UIView {
     }
     
     @objc func buttonLogInAction(_ sender: UIButton) {
-        
+        delegate?.tappedLogin()
     }
 }

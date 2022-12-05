@@ -7,13 +7,31 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, LoginScreenDelegate {
     
-    static let indetifier: String = "ForgotPasswordViewController"
     let screen: ForgotPasswordScreen = ForgotPasswordScreen()
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func loadView() {
+        super.loadView()
+        view = screen
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        screen.delegate(self)
+    }
+}
+
+//MARK: - Delegate
+
+extension ForgotPasswordViewController: ForgotPasswordScreenDelegate {
+    
+    func tappedSignUp() {
+        let vc = CreateAccountViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tappedForgotPassword() {
+        print(#function)
+    }
 }

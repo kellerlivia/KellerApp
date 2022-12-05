@@ -9,12 +9,25 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     
-    static let indetifier: String = "CreateAccountViewController"
     let screen: CreateAccountScreen = CreateAccountScreen()
-
+    
+    override func loadView() {
+        super.loadView()
+        view = screen
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen.delegate(self)
+    }
+}
 
-        
+//MARK: - Delegate
+
+extension CreateAccountViewController: CreateAccountScreenDelegate {
+    
+    func tappedLogin() {
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
