@@ -25,6 +25,17 @@
 		D80D592E29392F1600BE9B25 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */; };
 		D80D5932293A6EAA00BE9B25 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5931293A6EAA00BE9B25 /* CreateAccountViewController.swift */; };
 		D80D5936293A6EE700BE9B25 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5935293A6EE700BE9B25 /* CreateAccountScreen.swift */; };
+		D80D593C293E307F00BE9B25 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D593B293E307F00BE9B25 /* HomeViewController.swift */; };
+		D80D593F293E30A300BE9B25 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D593E293E30A300BE9B25 /* HomeScreen.swift */; };
+		D80D5942293E668D00BE9B25 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D80D5941293E668D00BE9B25 /* home.json */; };
+		D80D5945293E698000BE9B25 /* MenuHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5944293E698000BE9B25 /* MenuHomeModel.swift */; };
+		D80D5948293E6A1700BE9B25 /* MenuHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5947293E6A1700BE9B25 /* MenuHomeService.swift */; };
+		D80D594B293E6A8F00BE9B25 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D80D594A293E6A8F00BE9B25 /* Alamofire */; };
+		D80D594D293E6B0B00BE9B25 /* GenericService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D594C293E6B0B00BE9B25 /* GenericService.swift */; };
+		D80D5950293E716600BE9B25 /* MenuHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D594F293E716600BE9B25 /* MenuHomeViewModel.swift */; };
+		D80D5952293EB13100BE9B25 /* SectionHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5951293EB13100BE9B25 /* SectionHomeScreen.swift */; };
+		D80D5954293EB1CF00BE9B25 /* MenuHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5953293EB1CF00BE9B25 /* MenuHomeTableViewCell.swift */; };
+		D80D5957293EB25800BE9B25 /* MenuHomeTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80D5956293EB25800BE9B25 /* MenuHomeTableViewCellScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +74,16 @@
 		D80D592D29392F1600BE9B25 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D80D5931293A6EAA00BE9B25 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		D80D5935293A6EE700BE9B25 /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
+		D80D593B293E307F00BE9B25 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D80D593E293E30A300BE9B25 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		D80D5941293E668D00BE9B25 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
+		D80D5944293E698000BE9B25 /* MenuHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeModel.swift; sourceTree = "<group>"; };
+		D80D5947293E6A1700BE9B25 /* MenuHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeService.swift; sourceTree = "<group>"; };
+		D80D594C293E6B0B00BE9B25 /* GenericService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericService.swift; sourceTree = "<group>"; };
+		D80D594F293E716600BE9B25 /* MenuHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeViewModel.swift; sourceTree = "<group>"; };
+		D80D5951293EB13100BE9B25 /* SectionHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHomeScreen.swift; sourceTree = "<group>"; };
+		D80D5953293EB1CF00BE9B25 /* MenuHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeTableViewCell.swift; sourceTree = "<group>"; };
+		D80D5956293EB25800BE9B25 /* MenuHomeTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeTableViewCellScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80D594B293E6A8F00BE9B25 /* Alamofire in Frameworks */,
 				D80D59242938F9BC00BE9B25 /* FirebaseDatabase in Frameworks */,
 				D80D59282938F9BC00BE9B25 /* FirebaseStorage in Frameworks */,
 				D80D59222938F9BC00BE9B25 /* FirebaseAuth in Frameworks */,
@@ -117,10 +139,12 @@
 		D80D58E92938E3A700BE9B25 /* KellerApp */ = {
 			isa = PBXGroup;
 			children = (
+				D80D5946293E69D400BE9B25 /* Service */,
+				D80D5940293E667900BE9B25 /* Json */,
+				D80D593A293E306200BE9B25 /* Home */,
 				D80D5930293A6E7500BE9B25 /* CreateAccount */,
 				D80D592929392AEE00BE9B25 /* ForgotPassword */,
 				D80D591A2938E71F00BE9B25 /* Login */,
-				D80D58EE2938E3A700BE9B25 /* LoginViewController.swift */,
 				D80D591D2938EAAC00BE9B25 /* AppDelegate */,
 				D80D58F32938E3A800BE9B25 /* Assets.xcassets */,
 				D80D58F52938E3A800BE9B25 /* LaunchScreen.storyboard */,
@@ -151,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				D80D5933293A6EC300BE9B25 /* Screen */,
+				D80D58EE2938E3A700BE9B25 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -206,6 +231,69 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		D80D593A293E306200BE9B25 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5955293EB20F00BE9B25 /* Cell */,
+				D80D5943293E696700BE9B25 /* Model */,
+				D80D594E293E715300BE9B25 /* ViewModel */,
+				D80D593D293E308C00BE9B25 /* Screen */,
+				D80D593B293E307F00BE9B25 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D80D593D293E308C00BE9B25 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D80D593E293E30A300BE9B25 /* HomeScreen.swift */,
+				D80D5951293EB13100BE9B25 /* SectionHomeScreen.swift */,
+				D80D5956293EB25800BE9B25 /* MenuHomeTableViewCellScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D80D5940293E667900BE9B25 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5941293E668D00BE9B25 /* home.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		D80D5943293E696700BE9B25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5944293E698000BE9B25 /* MenuHomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D80D5946293E69D400BE9B25 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5947293E6A1700BE9B25 /* MenuHomeService.swift */,
+				D80D594C293E6B0B00BE9B25 /* GenericService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D80D594E293E715300BE9B25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D80D594F293E716600BE9B25 /* MenuHomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D80D5955293EB20F00BE9B25 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D80D5953293EB1CF00BE9B25 /* MenuHomeTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,6 +315,7 @@
 				D80D59232938F9BC00BE9B25 /* FirebaseDatabase */,
 				D80D59252938F9BC00BE9B25 /* FirebaseFirestore */,
 				D80D59272938F9BC00BE9B25 /* FirebaseStorage */,
+				D80D594A293E6A8F00BE9B25 /* Alamofire */,
 			);
 			productName = KellerApp;
 			productReference = D80D58E72938E3A700BE9B25 /* KellerApp.app */;
@@ -302,6 +391,7 @@
 			mainGroup = D80D58DE2938E3A700BE9B25;
 			packageReferences = (
 				D80D59202938F9BC00BE9B25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D80D5949293E6A8F00BE9B25 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = D80D58E82938E3A700BE9B25 /* Products */;
 			projectDirPath = "";
@@ -321,6 +411,7 @@
 			files = (
 				D80D58F72938E3A800BE9B25 /* LaunchScreen.storyboard in Resources */,
 				D80D58F42938E3A800BE9B25 /* Assets.xcassets in Resources */,
+				D80D5942293E668D00BE9B25 /* home.json in Resources */,
 				D80D591F2938F8E400BE9B25 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,8 +442,17 @@
 				D80D58EF2938E3A700BE9B25 /* LoginViewController.swift in Sources */,
 				D80D591C2938E74D00BE9B25 /* LoginScreen.swift in Sources */,
 				D80D58EB2938E3A700BE9B25 /* AppDelegate.swift in Sources */,
+				D80D593C293E307F00BE9B25 /* HomeViewController.swift in Sources */,
+				D80D594D293E6B0B00BE9B25 /* GenericService.swift in Sources */,
+				D80D5954293EB1CF00BE9B25 /* MenuHomeTableViewCell.swift in Sources */,
+				D80D5957293EB25800BE9B25 /* MenuHomeTableViewCellScreen.swift in Sources */,
+				D80D593F293E30A300BE9B25 /* HomeScreen.swift in Sources */,
+				D80D5950293E716600BE9B25 /* MenuHomeViewModel.swift in Sources */,
+				D80D5952293EB13100BE9B25 /* SectionHomeScreen.swift in Sources */,
+				D80D5948293E6A1700BE9B25 /* MenuHomeService.swift in Sources */,
 				D80D5936293A6EE700BE9B25 /* CreateAccountScreen.swift in Sources */,
 				D80D58ED2938E3A700BE9B25 /* SceneDelegate.swift in Sources */,
+				D80D5945293E698000BE9B25 /* MenuHomeModel.swift in Sources */,
 				D80D592B29392B1700BE9B25 /* ForgotPasswordScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +795,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		D80D5949293E6A8F00BE9B25 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -717,6 +825,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D80D59202938F9BC00BE9B25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		D80D594A293E6A8F00BE9B25 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D80D5949293E6A8F00BE9B25 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

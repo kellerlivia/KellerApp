@@ -11,6 +11,8 @@ import Firebase
 protocol LoginScreenDelegate: AnyObject {
     func tappedSignUp()
     func tappedForgotPassword()
+    func alertLogin(title: String, message: String)
+    func goHome()
 }
 
 class LoginScreen: UIView {
@@ -181,9 +183,9 @@ class LoginScreen: UIView {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password) { success, error in
             if error == nil {
-                print("Logado")
+                self.delegate?.goHome()
             } else {
-                print(error?.localizedDescription ?? "")
+                self.delegate?.alertLogin(title: "Error!", message: error?.localizedDescription ?? "")
             }
         }
     }

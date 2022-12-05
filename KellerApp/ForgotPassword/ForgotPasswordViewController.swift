@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPasswordViewController: UIViewController, LoginScreenDelegate {
+class ForgotPasswordViewController: UIViewController {
     
     let screen: ForgotPasswordScreen = ForgotPasswordScreen()
     

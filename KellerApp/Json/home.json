@@ -1,0 +1,75 @@
+{
+    "group": [
+        {
+            "title": "Mobile Development",
+            "child": [
+                {
+                    "title": "iOS"
+                },
+                {
+                    "title": "Android"
+                },
+                {
+                    "title": "React"
+                },
+                {
+                    "title": "Flutter"
+                }
+            ]
+        },
+        {
+            "title": "App screens",
+            "child": [
+                {
+                    "title": "Home"
+                },
+                {
+                    "title": "Login"
+                },
+                {
+                    "title": "Create Account"
+                },
+                {
+                    "title": "Forgot Password"
+                },
+                {
+                    "title": "Menu"
+                }
+            ]
+        },
+        {
+            "title": "Resources",
+            "child": [
+                {
+                    "title": "Firebase"
+                },
+                {
+                    "title": "Delegate"
+                },
+                {
+                    "title": "View code"
+                }
+            ]
+        },
+        {
+            "title": "Phrases",
+            "child": [
+                {
+                    "title": "Always learn"
+                },
+                {
+                    "title": "Swift is the best"
+                },
+                {
+                    "title": "iOS development"
+                },
+                {
+                    "title": "Visit the repository on github"
+                },
+                {
+                    "title": "See post on linkedin"
+                }
+            ]
+        }
+    ]
+}
