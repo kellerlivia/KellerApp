@@ -10,6 +10,7 @@ import Firebase
 
 protocol CreateAccountScreenDelegate: AnyObject {
     func tappedLogin()
+    func goHome()
 }
 
 class CreateAccountScreen: UIView {
@@ -230,7 +231,7 @@ class CreateAccountScreen: UIView {
         if repeatPassword == password {
             Auth.auth().createUser(withEmail: email, password: password) { authDataResult, error in
                 if error == nil {
-                    print("Cadastrado")
+                    self.delegate?.goHome()
                 } else {
                     print("Não foi possível realizar o cadastro")
                 }

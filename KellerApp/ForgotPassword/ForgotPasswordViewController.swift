@@ -25,13 +25,15 @@ class ForgotPasswordViewController: UIViewController {
 //MARK: - Delegate
 
 extension ForgotPasswordViewController: ForgotPasswordScreenDelegate {
-    
+    func sendEmailForgotPasswordAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
+    }
+
     func tappedSignUp() {
         let vc = CreateAccountViewController()
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func tappedForgotPassword() {
-        print(#function)
     }
 }

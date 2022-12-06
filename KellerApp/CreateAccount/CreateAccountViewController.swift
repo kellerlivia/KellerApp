@@ -25,6 +25,10 @@ class CreateAccountViewController: UIViewController {
 //MARK: - Delegate
 
 extension CreateAccountViewController: CreateAccountScreenDelegate {
+    func goHome() {
+        let vc = HomeViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     func tappedLogin() {
         let vc = LoginViewController()

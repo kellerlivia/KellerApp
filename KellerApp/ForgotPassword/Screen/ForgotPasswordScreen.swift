@@ -10,7 +10,7 @@ import Firebase
 
 protocol ForgotPasswordScreenDelegate: AnyObject {
     func tappedSignUp()
-    func tappedForgotPassword()
+    func sendEmailForgotPasswordAlert(title: String, message: String)
 }
 
 class ForgotPasswordScreen: UIView {
@@ -169,9 +169,9 @@ class ForgotPasswordScreen: UIView {
         guard let email = emailTextField.text else { return }
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error == nil {
-                print(#function)
+                self.delegate?.sendEmailForgotPasswordAlert(title: "Email sent!", message: error?.localizedDescription ?? "")
             } else {
-                print(#function)
+                self.delegate?.sendEmailForgotPasswordAlert(title: "Error!", message: error?.localizedDescription ?? "")
             }
         }
     }
