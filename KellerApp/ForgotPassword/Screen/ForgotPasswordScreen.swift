@@ -166,7 +166,14 @@ class ForgotPasswordScreen: UIView {
     }
     
     @objc func buttonForgotPasswordAction(_ sender: UIButton) {
-        delegate?.tappedForgotPassword()
+        guard let email = emailTextField.text else { return }
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if error == nil {
+                print(#function)
+            } else {
+                print(#function)
+            }
+        }
     }
     
     @objc func buttonSignUpAction(_ sender: UIButton) {

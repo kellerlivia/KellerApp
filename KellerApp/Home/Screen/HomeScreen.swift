@@ -6,8 +6,19 @@
 //
 
 import UIKit
+import Firebase
+
+protocol HomeScreenDelegate {
+    func signOutHome()
+}
 
 class HomeScreen: UIView {
+    
+    private var delegate: HomeScreenDelegate?
+    
+    public func delegate(_ delegate: HomeScreenDelegate?) {
+        self.delegate = delegate
+    }
     
     lazy var subImageView: UIImageView = {
         let image = UIImageView()
@@ -34,10 +45,25 @@ class HomeScreen: UIView {
         return tv
     }()
     
+    lazy var signOutButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Sign Out", for: .normal)
+        button.titleLabel?.font = UIFont(name:"Kohinoor Devanagari Semibold", size: 20)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(buttonSignOutAction), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func buttonSignOutAction(_ sender: UIButton) {
+        delegate?.signOutHome()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(subImageView)
         self.subImageView.addSubview(titleLabel)
+        self.addSubview(signOutButton)
         self.addSubview(tableView)
         self.configConstraints()
     }
@@ -55,7 +81,11 @@ class HomeScreen: UIView {
             subImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             subImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             
-            titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 45),
+            signOutButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
+            signOutButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
+            signOutButton.heightAnchor.constraint(equalToConstant: 16),
+            
+            titleLabel.topAnchor.constraint(equalTo: self.signOutButton.bottomAnchor, constant: 20),
             titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             tableView.topAnchor.constraint(equalTo: self.subImageView.bottomAnchor),

@@ -29,11 +29,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate(self)
+        screen?.delegate(self)
         viewModel.fetch(.request)
     }
 }
 
-//MARK: - MenuProfileViewModelDelegate
+//MARK: - Delegate Home
+
+extension HomeViewController: HomeScreenDelegate {
+    func signOutHome() {
+        let vc = LoginViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+//MARK: - MenuHomeViewModelDelegate
 
 extension HomeViewController: MenuHomeViewModelDelegate {
     func success() {
